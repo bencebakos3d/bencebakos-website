@@ -1,95 +1,174 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import LandingVideo from "../components/LandingVideo.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Chat"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="Bence Bakos">
+		<section class="section-loading-screen">
+			<div class="loader-wrapper">
+				<div class="loader">Loading...</div>
+			</div>
+			
+			<div class="loader-text">Fasten your seatbelts...</div>
+		</section>
+		<main class="currently-loading">
+			<LandingVideo />
+			<section>
+				<h1>Bence Bakos</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</section>
+		</main>
+		
+		
 </Layout>
 
 <style>
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
 	}
-
 	h1 {
 		margin: 2rem 0;
 	}
-
-	main {
-		margin: auto;
-		padding: 1em;
-		max-width: 60ch;
+	.currently-loading {
+		height: 100vh;
+		overflow: hidden;
+	}
+	.section-loading-screen {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		z-index: 255;
+		background-color: black;
+		display: flex;
+		align-items: center;
+		justify-content: center	;
+		flex-direction: column;
+		transition: all 1s ease-out;
 	}
 
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%,
+	@-webkit-keyframes exitLoading {
+		0% {
+			opacity: 1;
+			display: initial;
+		}
+		99% {
+			display: initial;
+		}
 		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
+			opacity: 0;
+			display: none;
 		}
 	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4f39fa;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
+	@keyframes exitLoading {
+		0% {
+			opacity: 1;
+			display: initial;
+		}
+		99% {
+			display: initial;
+		}
+		100% {
+			opacity: 0;
+			display: none;
+		}
 	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
+	.loader-wrapper {
+		height: 200px;
 	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+	.loader-text {
+		color: #ffffff;
+		font-size: 1.4rem;
+	}
+	.loader, .loader:before, .loader:after {
+  background: #ffffff;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 3em;
+}
+.loader {
+  color: #ffffff;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.7em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.7em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 3em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 4em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 3em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 4em;
+  }
+}
+	.hidden {
+		animation: exitLoading 1s ease-out;
+		animation-iteration-count: 1;
+		opacity: 0;
+		visibility: hidden;
+		transition: visibility 1s linear;
 	}
 </style>
+
+<script>
+
+	let images = []
+	for (let i = 1; i < 101; i++) {
+		images[i] = new Image();
+		images[i].src = `./engine_video/engine_${i}.jpg`;
+		if (i === 100) {
+		}
+	}
+
+	Promise.all(
+	images.map((img) => {
+		if (img.complete) return Promise.resolve(img.naturalHeight !== 0);
+		return new Promise((resolve) => {
+		img.addEventListener('load', () => resolve(true));
+		img.addEventListener('error', () => resolve(false));
+		});
+	})
+	).then(() => {
+		document.querySelector("main").classList.remove("currently-loading");
+		document.querySelector(".section-loading-screen").classList.add("hidden")
+	});
+
+
+	
+
+</script>
