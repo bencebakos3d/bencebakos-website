@@ -13,9 +13,12 @@ import LandingVideo from "../components/LandingVideo.astro";
 		</section>
 		<main class="currently-loading">
 			<LandingVideo />
-			<section>
-				<h1>Bence Bakos</h1>
+			<section class="section-about">
+				<h1>The ideal choice</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</section>
+			<section class="section-works">
+				
 			</section>
 		</main>
 		
@@ -25,6 +28,7 @@ import LandingVideo from "../components/LandingVideo.astro";
 <style>
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+		--global-side-padding: 150px;
 	}
 	h1 {
 		margin: 2rem 0;
@@ -143,15 +147,20 @@ import LandingVideo from "../components/LandingVideo.astro";
 		visibility: hidden;
 		transition: visibility 1s linear;
 	}
+	.section-about, .section-works {
+		box-sizing: border-box;
+		padding-left: var(--global-side-padding);
+		padding-right: var(--global-side-padding);
+	}
 </style>
 
 <script>
 
 	let images = []
-	for (let i = 1; i < 101; i++) {
+	for (let i = 1; i < 61; i++) {
 		images[i] = new Image();
 		images[i].src = `./engine_video/engine_${i}.jpg`;
-		if (i === 100) {
+		if (i === 60) {
 		}
 	}
 
