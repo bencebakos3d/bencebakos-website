@@ -1,203 +1,225 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import LandingVideo from "../components/LandingVideo.astro";
-import Header from "../components/Header.astro";
+import Layout from '../layouts/Layout.astro';
+import LandingVideo from '../components/LandingVideo.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
 ---
 
-<Layout title="Bence Bakos">	
-		<section class="section-loading-screen">
-			<div class="loader-wrapper">
-				<div class="loader">Loading...</div>
-			</div>
-			<div class="loader-text">Fasten your seatbelts...</div>
-		</section>
-		<main class="currently-loading">
-			<Header />
-			<LandingVideo />
-			<section class="section-about" id="section-about">
-				<h1>The ideal choice</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</section>
-			<section class="section-works" id="section-works">
-				
-			</section>
-			<section class="section-contact" id="section-contact">
-				
-			</section>
-		</main>
-		
-		
+<Layout title="Bence Bakos">
+  <section class="section-loading-screen">
+    <div class="loader-wrapper">
+      <div class="loader">Loading...</div>
+    </div>
+    <div class="loader-text">Fasten your seatbelts...</div>
+  </section>
+  <main class="currently-loading">
+    <div id="header" class="hidden floatup">
+      <Header />
+    </div>
+    <section id="section-beginning">
+      <LandingVideo />
+    </section>
+
+    <section class="section-about" id="section-about">
+      <h1>ABOUT</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </section>
+    <section class="section-works" id="section-works"></section>
+    <Contact />
+  </main>
 </Layout>
 
+<style is:global>
+  :root {
+    --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+    --global-side-padding: 150px;
+    --global-primary-background: #efefef;
+    --global-secondary-background: #dbd9d3;
+    --global-primary-content: #765482;
+  }
+  h1 {
+    margin: 0;
+    font-weight: 300;
+    font-size: 48px;
+    letter-spacing: 0.5em;
+    color: #575757;
+  }
+</style>
 <style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-		--global-side-padding: 150px;
-	}
-	h1 {
-		margin: 2rem 0;
-	}
-	.currently-loading {
-		height: 100vh;
-		overflow: hidden;
-	}
-	.section-loading-screen {
-		width: 100vw;
-		height: 100vh;
-		position: fixed;
-		z-index: 255;
-		background-color: black;
-		display: flex;
-		align-items: center;
-		justify-content: center	;
-		flex-direction: column;
-		transition: all 1s ease-out;
-	}
+  .currently-loading {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .section-loading-screen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 255;
+    background-color: var(--global-primary-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 1s ease-out;
+  }
 
-	@-webkit-keyframes exitLoading {
-		0% {
-			opacity: 1;
-			display: initial;
-		}
-		99% {
-			display: initial;
-		}
-		100% {
-			opacity: 0;
-			display: none;
-		}
-	}
-	@keyframes exitLoading {
-		0% {
-			opacity: 1;
-			display: initial;
-		}
-		99% {
-			display: initial;
-		}
-		100% {
-			opacity: 0;
-			display: none;
-		}
-	}
-	.loader-wrapper {
-		height: 200px;
-	}
-	.loader-text {
-		color: #ffffff;
-		font-size: 1.4rem;
-	}
-	.loader, .loader:before, .loader:after {
-  background: #ffffff;
-  -webkit-animation: load1 1s infinite ease-in-out;
-  animation: load1 1s infinite ease-in-out;
-  width: 1em;
-  height: 3em;
-}
-.loader {
-  color: #ffffff;
-  text-indent: -9999em;
-  margin: 88px auto;
-  position: relative;
-  font-size: 11px;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
-}
-.loader:before,
-.loader:after {
-  position: absolute;
-  top: 0;
-  content: '';
-}
-.loader:before {
-  left: -1.7em;
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
-}
-.loader:after {
-  left: 1.7em;
-}
-@-webkit-keyframes load1 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0;
+  @-webkit-keyframes exitLoading {
+    0% {
+      opacity: 1;
+      display: initial;
+    }
+    99% {
+      display: initial;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+  @keyframes exitLoading {
+    0% {
+      opacity: 1;
+      display: initial;
+    }
+    99% {
+      display: initial;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  .loader-wrapper {
+    height: 200px;
+  }
+  .loader-text {
+    color: #000000;
+    font-size: 48px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+  .loader,
+  .loader:before,
+  .loader:after {
+    background: #ffffff;
+    -webkit-animation: load1 1s infinite ease-in-out;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
     height: 3em;
   }
-  40% {
-    box-shadow: 0 -2em;
-    height: 4em;
+  .loader {
+    color: #ffffff;
+    text-indent: -9999em;
+    margin: 88px auto;
+    position: relative;
+    font-size: 11px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
   }
-}
-@keyframes load1 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0;
-    height: 3em;
+  .loader:before,
+  .loader:after {
+    position: absolute;
+    top: 0;
+    content: '';
   }
-  40% {
-    box-shadow: 0 -2em;
-    height: 4em;
+  .loader:before {
+    left: -1.7em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
   }
-}
-	.hidden {
-		animation: exitLoading 1s ease-out;
-		animation-iteration-count: 1;
-		opacity: 0;
-		visibility: hidden;
-		transition: visibility 1s linear;
-	}
-	.section-about, .section-works, .section-contact {
-		height: 100vh;
-		box-sizing: border-box;
-		padding: var(--global-side-padding);
-	}
+  .loader:after {
+    left: 1.7em;
+  }
+  @-webkit-keyframes load1 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 0;
+      height: 3em;
+    }
+    40% {
+      box-shadow: 0 -2em;
+      height: 4em;
+    }
+  }
+  @keyframes load1 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 0;
+      height: 3em;
+    }
+    40% {
+      box-shadow: 0 -2em;
+      height: 4em;
+    }
+  }
+  .hidden {
+    animation: exitLoading 1s ease-out;
+    animation-iteration-count: 1;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .section-about,
+  .section-works,
+  .section-contact {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: var(--global-side-padding);
+  }
+  .visible {
+    opacity: 1;
+    visibility: initial;
+    transition: opacity 1s linear;
+  }
 </style>
 
 <script is:inline>
+  let images = [];
+  for (let i = 1; i < 61; i++) {
+    images[i] = new Image();
+    images[i].src = `./engine_video/engine_${i}.jpg`;
+    if (i === 60) {
+    }
+  }
 
-	let images = []
-	for (let i = 1; i < 61; i++) {
-		images[i] = new Image();
-		images[i].src = `./engine_video/engine_${i}.jpg`;
-		if (i === 60) {
-		}
-	}
+  Promise.all(
+    images.map((img) => {
+      if (img.complete) return Promise.resolve(img.naturalHeight !== 0);
+      return new Promise((resolve) => {
+        img.addEventListener('load', () => resolve(true));
+        img.addEventListener('error', () => resolve(false));
+      });
+    })
+  ).then(() => {
+    document.querySelector('main').classList.remove('currently-loading');
+    document.querySelector('.section-loading-screen').classList.add('hidden');
+  });
 
-	Promise.all(
-	images.map((img) => {
-		if (img.complete) return Promise.resolve(img.naturalHeight !== 0);
-		return new Promise((resolve) => {
-		img.addEventListener('load', () => resolve(true));
-		img.addEventListener('error', () => resolve(false));
-		});
-	})
-	).then(() => {
-		document.querySelector("main").classList.remove("currently-loading");
-		document.querySelector(".section-loading-screen").classList.add("hidden")
-	});
-
-const sections = document.querySelectorAll('section');
+  const sections = document.querySelectorAll('section');
   const options = {
     threshold: 0.8,
   };
   const observer = new IntersectionObserver(function (entries, observer) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-		if (entry.target.id === "section-about") {
-			
-		}
-        console.log(entry.target.id)
+        if (entry.target.id === 'section-about' && document.getElementById('header').classList.contains('hidden')) {
+          document.getElementById('header').classList.remove('hidden');
+          document.getElementById('header').classList.add('visible');
+        }
+        console.log(entry.target.id);
       }
     });
   }, options);
   sections.forEach((section) => {
     observer.observe(section);
   });
-	
-
 </script>
