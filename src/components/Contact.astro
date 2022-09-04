@@ -1,10 +1,10 @@
 <section class="section-contact" id="section-contact">
   <h1>CONTACT</h1>
-  <form action="">
-    <input class="textinput" type="text" placeholder="Email" />
-    <input class="textinput" type="text" placeholder="Name" />
-    <textarea class="textinput" name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-    <input type="submit" value="Submit" />
+  <form action="" id="form">
+    <input class="textinput" type="text" placeholder="Email" id="reply_to" />
+    <input class="textinput" type="text" placeholder="Name" id="from_name" />
+    <textarea class="textinput" name="" id="" cols="30" rows="10" placeholder="Message" id="message"></textarea>
+    <input type="submit" value="Submit" id="submit" />
   </form>
 </section>
 
@@ -67,3 +67,30 @@
     font-weight: 400;
   }
 </style>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" is:inline></script>
+
+<script is:inline>
+  emailjs.init('ZipzQzbNsoR8pvogC');
+
+  const btn = document.getElementById('submit');
+  document.getElementById('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    btn.value = 'Sending...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_27sn22g';
+
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
+        btn.value = 'Submit';
+        alert('Sent!');
+      },
+      (err) => {
+        btn.value = 'Submit';
+        alert(JSON.stringify(err));
+      }
+    );
+  });
+</script>

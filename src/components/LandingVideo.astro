@@ -1,6 +1,6 @@
 <section class="section-landing">
   <div class="landing-video-wrapper">
-    <img src="./engine_video/engine_1.jpg" id="landing-video" alt="" />
+    <img src="./engine_video/engine_1.png" id="landing-video" alt="" />
   </div>
   <div class="scroll-down"></div>
   <div class="landing-text">
@@ -63,6 +63,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-color: var(--global-primary-background);
   }
 </style>
 
@@ -73,7 +74,7 @@
   function trackScrollPosition() {
     const y = window.scrollY;
     const label = Math.min(Math.floor(y / step) + 1, 60);
-    const currentImage = `./engine_video/engine_${label}.jpg`;
+    const currentImage = `./engine_video/engine_${label}.png`;
     // Change the background image
     landingVideo.setAttribute('src', currentImage);
   }
