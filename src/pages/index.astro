@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import LandingVideo from '../components/LandingVideo.astro';
 import Header from '../components/Header.astro';
 import Contact from '../components/Contact.astro';
+import Works from '../components/Works.astro';
 ---
 
 <Layout title="Bence Bakos">
@@ -27,7 +28,9 @@ import Contact from '../components/Contact.astro';
         culpa qui officia deserunt mollit anim id est laborum.
       </p>
     </section>
-    <section class="section-works" id="section-works"></section>
+    <section class="section-works" id="section-works">
+      <Works />
+    </section>
     <Contact />
   </main>
 </Layout>
@@ -46,6 +49,19 @@ import Contact from '../components/Contact.astro';
     font-size: 48px;
     letter-spacing: 0.5em;
     color: #575757;
+  }
+  h2 {
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 36px;
+    letter-spacing: 0.2em;
+    margin: 0;
+  }
+  p {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.1em;
   }
 </style>
 <style>
@@ -169,7 +185,6 @@ import Contact from '../components/Contact.astro';
     visibility: hidden;
   }
   .section-about,
-  .section-works,
   .section-contact {
     height: 100vh;
     box-sizing: border-box;
