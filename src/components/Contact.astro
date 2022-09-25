@@ -1,10 +1,10 @@
 <section class="section-contact" id="section-contact">
   <h1>CONTACT</h1>
   <form action="" id="form">
-    <input class="textinput" type="text" placeholder="Email" id="reply_to" />
-    <input class="textinput" type="text" placeholder="Name" id="from_name" />
-    <textarea class="textinput" name="" id="" cols="30" rows="10" placeholder="Message" id="message"></textarea>
-    <input type="submit" value="Submit" id="submit" />
+    <input class="textinput" type="text" placeholder="Email" id="reply_to" name="reply_to" />
+    <input class="textinput" type="text" placeholder="Name" id="from_name" name="from_name" />
+    <textarea class="textinput" name="message" id="" cols="30" rows="10" placeholder="Message" id="message"></textarea>
+    <input type="submit" value="Submit" id="button" />
   </form>
 </section>
 
@@ -80,10 +80,12 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" is:inline></script>
 
-<script is:inline>
-  emailjs.init('ZipzQzbNsoR8pvogC');
+<script type="text/javascript" is:inline>
+  emailjs.init('sJIR2-ni15ODQ-TUd');
+</script>
 
-  const btn = document.getElementById('submit');
+<script is:inline>
+  const btn = document.getElementById('button');
   document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -94,11 +96,12 @@
 
     emailjs.sendForm(serviceID, templateID, this).then(
       () => {
-        btn.value = 'Submit';
+        console.log(this);
+        btn.value = 'Send Email';
         alert('Sent!');
       },
       (err) => {
-        btn.value = 'Submit';
+        btn.value = 'Send Email';
         alert(JSON.stringify(err));
       }
     );
