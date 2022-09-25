@@ -1,14 +1,72 @@
 <section class="section-contact" id="section-contact">
+  <div class="popup-overlay" style="visibility: hidden;" id="popup-overlay">
+    <div class="popup-box">
+      <div class="close-popup-box" onclick="togglePopup(false)">X</div>
+      <img src="./icons/popup_departure_icon.png" alt="Thank you" class="departure-icon" />
+      <h2>Thank you!</h2>
+      <p>You will be hearing from me soon.</p>
+    </div>
+  </div>
   <h1>CONTACT</h1>
   <form action="" id="form">
     <input class="textinput" type="text" placeholder="Email" id="reply_to" name="reply_to" />
     <input class="textinput" type="text" placeholder="Name" id="from_name" name="from_name" />
-    <textarea class="textinput" name="message" id="" cols="30" rows="10" placeholder="Message" id="message"></textarea>
+    <textarea class="textinput" name="message" cols="30" rows="10" placeholder="Message" id="message"></textarea>
     <input type="submit" value="Submit" id="button" />
   </form>
 </section>
 
 <style>
+  .popup-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: #262626e3;
+    position: fixed;
+    top: 0;
+    z-index: 255;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .popup-box {
+    max-width: 700px;
+    max-height: 300px;
+    width: 90%;
+    height: 90%;
+    background-color: var(--global-primary-background);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .close-popup-box {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    border-bottom-left-radius: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--global-primary-content);
+    color: white;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+  .departure-icon {
+    width: 80px;
+  }
+  .popup-box > p {
+    margin-bottom: 10px;
+  }
   section {
     height: 100vh;
     background-color: var(--global-secondary-background);
@@ -69,11 +127,21 @@
 
   @media only screen and (max-width: 768px) {
     .textinput {
-      width: 80%;
+      width: 85%;
     }
 
     h1 {
       margin-left: 1rem;
+    }
+    form {
+      width: 100%;
+    }
+    input[type='text'] {
+      height: 50px;
+      margin-bottom: 30px;
+    }
+    input[type='submit'] {
+      height: 50px;
     }
   }
 </style>
@@ -86,6 +154,7 @@
 
 <script is:inline>
   const btn = document.getElementById('button');
+
   document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -98,12 +167,23 @@
       () => {
         console.log(this);
         btn.value = 'Send Email';
-        alert('Sent!');
+        document.getElementById('reply_to').value = '';
+        document.getElementById('from_name').value = '';
+        document.getElementById('message').value = '';
+
+        togglePopup(true);
       },
       (err) => {
-        btn.value = 'Send Email';
+        btn.value = 'Submit';
         alert(JSON.stringify(err));
       }
     );
   });
+
+  function togglePopup(toggle) {
+    const popup = document.getElementById('popup-overlay');
+
+    if (toggle) popup.style.visibility = 'initial';
+    if (!toggle) popup.style.visibility = 'hidden';
+  }
 </script>
