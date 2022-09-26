@@ -74,7 +74,7 @@
   }
 </style>
 
-<script>
+<script is:inline>
   const landingVideo = document.getElementById('landing-video');
   const step = 10;
 
@@ -84,6 +84,7 @@
     const currentImage = `./engine_video/engine_${label}.png`;
     // Change the background image
     landingVideo.setAttribute('src', currentImage);
+    console.log(currentImage);
   }
 
   document.addEventListener('scroll', () => {
