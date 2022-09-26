@@ -14,9 +14,9 @@ import Works from '../components/Works.astro';
     <div class="loader-text">Fasten your seatbelts...</div>
   </section>
   <main class="currently-loading">
-    <div id="header" class="hidden floatup">
+    <!-- <div id="header" class="hidden floatup">
       <Header />
-    </div>
+    </div> -->
     <section id="section-beginning">
       <LandingVideo />
     </section>
@@ -234,22 +234,22 @@ import Works from '../components/Works.astro';
     document.querySelector('.section-loading-screen').classList.add('hidden');
   });
 
-  const sections = document.querySelectorAll('section');
-  const options = {
-    threshold: 0.8,
-  };
-  const observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        if (entry.target.id === 'section-about' && document.getElementById('header').classList.contains('hidden')) {
-          document.getElementById('header').classList.remove('hidden');
-          document.getElementById('header').classList.add('visible');
-        }
-        console.log(entry.target.id);
-      }
-    });
-  }, options);
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
+  // const sections = document.querySelectorAll('section');
+  // const options = {
+  //   threshold: 0.8,
+  // };
+  // const observer = new IntersectionObserver(function (entries, observer) {
+  //   entries.forEach((entry) => {
+  //     if (entry.isIntersecting) {
+  //       if (entry.target.id === 'section-about' && document.getElementById('header').classList.contains('hidden')) {
+  //         document.getElementById('header').classList.remove('hidden');
+  //         document.getElementById('header').classList.add('visible');
+  //       }
+  //       console.log(entry.target.id);
+  //     }
+  //   });
+  // }, options);
+  // sections.forEach((section) => {
+  //   observer.observe(section);
+  // });
 </script>

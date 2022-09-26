@@ -20,6 +20,9 @@
     width: 100%;
     height: 100vh;
     top: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
   }
   .scroll-down {
     position: absolute;
@@ -71,6 +74,12 @@
     height: 100%;
     object-fit: cover;
     background-color: var(--global-primary-background);
+  }
+  @media only screen and (max-width: 768px) {
+    #landing-video {
+      object-fit: contain;
+      transform: scale(2.3);
+    }
   }
 </style>
 
