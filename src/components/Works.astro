@@ -2,33 +2,33 @@
   <h1>TECH</h1>
   <div class="works-wrapper">
     <div class="row">
-      <img class="img-50" src="./images/tech_01.jpg" alt="Indian Point house" />
+      <img class="img-50" src="./images/tech_02.jpg" alt="BB x TL Website" onclick="window.open('https://bbtl-wedding.com/')" />
       <div class="row-text">
-        <h2>BB x TL Wedding</h2>
+        <h2 style="cursor:pointer" onclick="window.open('https://bbtl-wedding.com/')">BB x TL Wedding</h2>
         <p>
-          This work is a concept design by Christopher Nobles and Sarah Mespelt Larranaga from Freestream. The project features a new BBJ 787 Jet.
-          <br />Teamwork of <span class="digit" onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</span>.
+          A small static website created for our wedding using Astro framework.
+          <br />Hobby project.
         </p>
       </div>
     </div>
     <div class="row row-reverse">
       <div class="row-text">
-        <h2>3DigitStudio</h2>
+        <h2 onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</h2>
         <p>
-          Website of aviation and railway visualzation studio 3DigitStudio.
+          Website of aviation and railway visualzation studio where I have been working for the past few years.
           <br />Teamwork of <span class="digit" onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</span>.
         </p>
       </div>
-      <img class="img-50" src="./images/tech_01.jpg" alt="Indian Point house" />
+      <img class="img-50" src="./images/tech_01.jpg" alt="3DigitStudio website" onclick="window.open('https://3digitstudio.com/index.php')" />
     </div>
   </div>
 
   <h1>ARTS</h1>
   <div class="works-wrapper">
     <div class="row">
-      <img class="img-50" src="./images/arts_05.jpeg" alt="Indian Point house" />
+      <img class="img-50" src="./images/arts_05.jpeg" alt="Boeing 787 Private Jet" onclick="window.open('https://3digitstudio.com/project.php?project=freestream')" />
       <div class="row-text">
-        <h2>Boeing 787 Private Jet</h2>
+        <h2 onclick="window.open('https://3digitstudio.com/project.php?project=freestream')">Boeing 787 Private Jet</h2>
         <p>
           This work is a concept design by Christopher Nobles and Sarah Mespelt Larranaga from Freestream. The project features a new BBJ 787 Jet.
           <br />Teamwork of <span class="digit" onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</span>.
@@ -37,18 +37,18 @@
     </div>
     <div class="row row-reverse">
       <div class="row-text">
-        <h2>Panasonic Kitchen Appliances</h2>
+        <h2 onclick="window.open('https://3digitstudio.com/project.php?project=panasonic')">Panasonic Kitchen Appliances</h2>
         <p>
           For Panasonic Home Appliances we have created 3D renders and short animations for four of their new devices.
           <br />Teamwork of <span class="digit" onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</span>.
         </p>
       </div>
-      <img class="img-25" src="./images/arts_06.jpeg" alt="Indian Point house" />
+      <img class="img-25" src="./images/arts_06.jpeg" alt="Panasonic Kitchen Appliances" onclick="window.open('https://3digitstudio.com/project.php?project=panasonic')" />
     </div>
     <div class="row">
-      <img class="img-50" src="./images/arts_07.jpeg" alt="Indian Point house" />
+      <img class="img-50" src="./images/arts_07.jpeg" alt="Williams Airtek Seat" onclick="window.open('https://3digitstudio.com/project.php?project=airtek')" />
       <div class="row-text">
-        <h2>Williams Airtek Seat</h2>
+        <h2 onclick="window.open('https://3digitstudio.com/project.php?project=airtek')">Williams Airtek Seat</h2>
         <p>
           We have created a 3D web-application to showcase the features of the project, as well as a PC-based cabin interior with the new seats, featuring VR mode and interactivity.
           <br /> Teamwork of <span class="digit" onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</span>.
@@ -57,10 +57,10 @@
     </div>
     <div class="row row-reverse">
       <div class="row-text">
-        <h2>Vodafone Ireland Gigabit Broadband</h2>
-        <p>Animation created for Vodafone Ireland with Irish architect Dermot Bannon.</p>
+        <h2 onclick="window.open('https://3digitstudio.com/works.php')">Vodafone Ireland Gigabit Broadband</h2>
+        <p>Animation created for Vodafone Ireland with Irish architect Dermot Bannon. <br /> Teamwork of <span class="digit" onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</span>.</p>
       </div>
-      <img class="img-50" src="./images/arts_04.jpg" alt="Indian Point house" />
+      <img class="img-50" src="./images/arts_04.jpg" alt="Vodafone Ireland Gigabit Broadband" onclick="window.open('https://3digitstudio.com/works.php')" />
     </div>
 
     <div class="row">
@@ -95,6 +95,9 @@
 </div>
 
 <style>
+  h1 {
+    margin-top: 5rem;
+  }
   .works-wrapper {
     width: 100%;
   }
@@ -123,6 +126,12 @@
     box-sizing: border-box;
     padding-left: var(--global-side-padding);
     padding-right: var(--global-side-padding);
+  }
+  .row-text > h2 {
+    cursor: pointer;
+  }
+  .row > img {
+    cursor: pointer;
   }
   p {
     margin-top: 1rem;
