@@ -1,6 +1,27 @@
 <div>
   <h1>TECH</h1>
-  <div class="works-wrapper"></div>
+  <div class="works-wrapper">
+    <div class="row">
+      <img class="img-50" src="./images/tech_01.jpg" alt="Indian Point house" />
+      <div class="row-text">
+        <h2>BB x TL Wedding</h2>
+        <p>
+          This work is a concept design by Christopher Nobles and Sarah Mespelt Larranaga from Freestream. The project features a new BBJ 787 Jet.
+          <br />Teamwork of <span class="digit" onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</span>.
+        </p>
+      </div>
+    </div>
+    <div class="row row-reverse">
+      <div class="row-text">
+        <h2>3DigitStudio</h2>
+        <p>
+          Website of aviation and railway visualzation studio 3DigitStudio.
+          <br />Teamwork of <span class="digit" onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</span>.
+        </p>
+      </div>
+      <img class="img-50" src="./images/tech_01.jpg" alt="Indian Point house" />
+    </div>
+  </div>
 
   <h1>ARTS</h1>
   <div class="works-wrapper">
@@ -100,8 +121,8 @@
     justify-content: center;
     height: 100%;
     box-sizing: border-box;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: var(--global-side-padding);
+    padding-right: var(--global-side-padding);
   }
   p {
     margin-top: 1rem;
@@ -129,8 +150,7 @@
     }
     .row-text {
       width: 100%;
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-bottom: 50px;
     }
     p {
       width: 100%;

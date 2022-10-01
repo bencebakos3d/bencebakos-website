@@ -35,7 +35,7 @@ import About from '../components/About.astro';
 <style is:global>
   :root {
     --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-    --global-side-padding: 150px;
+    --global-side-padding: 80px;
     --global-primary-background: #efefef;
     --global-secondary-background: #dbd9d3;
     --global-primary-content: #765482;
@@ -69,10 +69,13 @@ import About from '../components/About.astro';
   @media only screen and (max-width: 768px) {
     :root {
       --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-      --global-side-padding: 50px;
+      --global-side-padding: 20px;
       --global-primary-background: #efefef;
       --global-secondary-background: #dbd9d3;
       --global-primary-content: #765482;
+    }
+    p {
+      font-size: 1rem;
     }
   }
 </style>
