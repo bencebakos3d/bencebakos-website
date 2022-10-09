@@ -1,22 +1,50 @@
 <section>
-  <h1>ABOUT</h1>
-  <div class="left-col">
-    <h2>Artist & Engineer</h2>
-    <p>
-      I started my carreer as a 3D Artist: creating cool visualizations of aircraft and trains. <br /> When I was working on web configurators, I quickly realized the importance of programming.
-      <br />
-      <br />I'm currently working as a 3D Generalist at 3DigitStudio.
-    </p>
+  <div class="about-title">
+    <div class="divider"></div>
+    <div class="title">
+      <h1>Artist <br />&<br /> Developer</h1>
+    </div>
   </div>
 
-  <h2>Best Of Both Worlds</h2>
-  <p>My strong visualization background helps me a lot, especially with frontend tasks. Image adjustment is an everyday thing for me.</p>
+  <div class="right-col">
+    <p>
+      When I was 17, I started my carreer as a 3D Artist: creating cool visualizations of aircraft and trains. <br /> As I was working on web configurators, I quickly realized the importance of programming.
+      <br />
+      <br />
+    </p>
+    <p>Currently I use React and Astro frameworks on the frontend, NodeJS and MySQL on the backend. My strong visualization background helps me a lot, especially with frontend tasks.</p>
+  </div>
+
+  <!-- <h2>Best Of Both Worlds</h2> -->
 </section>
 
 <style>
   section {
+    padding-top: var(--global-side-padding);
+    background-color: var(--global-primary-background);
+  }
+  .about-title {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .divider {
+    width: 50%;
+  }
+  .left-col,
+  .right-col,
+  .title {
+    width: 50%;
     box-sizing: border-box;
     padding-left: var(--global-side-padding);
     padding-right: var(--global-side-padding);
+  }
+  h1 {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    margin: 0;
   }
 </style>
