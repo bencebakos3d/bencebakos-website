@@ -47,4 +47,31 @@
     line-height: 4rem;
     margin: 0;
   }
+  @media only screen and (max-width: 768px) {
+    section {
+      padding-top: 0;
+    }
+    .about-title {
+      flex-direction: column-reverse;
+      box-sizing: border-box;
+      padding-left: var(--global-side-padding);
+      padding-right: var(--global-side-padding);
+    }
+    .title,
+    .right-col {
+      width: 100%;
+    }
+    .divider {
+      width: 30%;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+    .title {
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+    }
+  }
 </style>

@@ -78,7 +78,7 @@ import About from '../components/About.astro';
       --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
       --global-side-padding: 20px;
       --global-primary-background: #efefef;
-      --global-secondary-background: #dbd9d3;
+      --global-secondary-background: #efefef;
       --global-primary-content: #765482;
     }
     p {
@@ -217,6 +217,13 @@ import About from '../components/About.astro';
     visibility: initial;
     transition: opacity 1s linear;
   }
+  @media only screen and (max-width: 768px) {
+    .loader-text {
+      font-size: 1.6rem;
+      text-align: center;
+      line-height: 2.5rem;
+    }
+  }
 </style>
 
 <script is:inline>
@@ -240,23 +247,4 @@ import About from '../components/About.astro';
     document.querySelector('main').classList.remove('currently-loading');
     document.querySelector('.section-loading-screen').classList.add('hidden');
   });
-
-  // const sections = document.querySelectorAll('section');
-  // const options = {
-  //   threshold: 0.8,
-  // };
-  // const observer = new IntersectionObserver(function (entries, observer) {
-  //   entries.forEach((entry) => {
-  //     if (entry.isIntersecting) {
-  //       if (entry.target.id === 'section-about' && document.getElementById('header').classList.contains('hidden')) {
-  //         document.getElementById('header').classList.remove('hidden');
-  //         document.getElementById('header').classList.add('visible');
-  //       }
-  //       console.log(entry.target.id);
-  //     }
-  //   });
-  // }, options);
-  // sections.forEach((section) => {
-  //   observer.observe(section);
-  // });
 </script>
