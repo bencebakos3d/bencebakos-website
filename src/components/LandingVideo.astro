@@ -12,7 +12,7 @@
 <style>
   .section-landing {
     width: 100vw;
-    height: 1450px;
+    height: 250vh;
     position: relative;
     background-color: var(--global-primary-background);
   }
@@ -88,7 +88,7 @@
   @media only screen and (max-width: 768px) {
     #landing-video {
       object-fit: contain;
-      transform: scale(2.3);
+      transform: scale(1.6);
     }
     .landing-text-name {
       font-size: 28px;
@@ -101,7 +101,7 @@
 
 <script is:inline>
   const landingVideo = document.getElementById('landing-video');
-  const step = 10;
+  const step = 22;
 
   function trackScrollPosition() {
     const y = window.scrollY;
