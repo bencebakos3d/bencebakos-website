@@ -32,60 +32,6 @@ import About from '../components/About.astro';
   </main>
 </Layout>
 
-<style is:global>
-  :root {
-    --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-    --global-side-padding: 80px;
-    --global-primary-background: #efefef;
-    /* --global-secondary-background: #dbd9d3; */
-    --global-secondary-background: #efefef;
-    --global-primary-content: #765482;
-  }
-  h1 {
-    margin: 5rem 0rem;
-    font-weight: 300;
-    font-size: 48px;
-    letter-spacing: 0.5em;
-    color: #575757;
-    text-align: center;
-  }
-  h2 {
-    font-family: 'Raleway';
-    font-weight: 500;
-    font-size: 36px;
-    letter-spacing: 0.2em;
-    margin: 0;
-  }
-  p {
-    font-family: 'Open Sans';
-    font-weight: 300;
-    font-size: 20px;
-    letter-spacing: 0.1em;
-    line-height: 1.6rem;
-    margin: 0;
-  }
-  section {
-    width: 100vw;
-  }
-  .divider {
-    width: 100%;
-    height: 2px;
-    background-color: black;
-  }
-
-  @media only screen and (max-width: 768px) {
-    :root {
-      --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-      --global-side-padding: 20px;
-      --global-primary-background: #efefef;
-      --global-secondary-background: #efefef;
-      --global-primary-content: #765482;
-    }
-    p {
-      font-size: 1rem;
-    }
-  }
-</style>
 <style>
   .currently-loading {
     height: 100vh;
