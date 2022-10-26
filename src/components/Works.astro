@@ -1,6 +1,19 @@
 <div class="tech-wrapper">
   <h1>WORKS</h1>
   <div class="works-wrapper">
+    <div class="col">
+      <img class="img-100" src="./images/tech_03.png" alt="The Crystal Online Casino Experience" />
+      <h1 class="crystal-title">The Crystal</h1>
+      <h2>Online casino project</h2>
+      <div class="read-more-wrapper">
+        <p>Read More</p>
+        <div class="moving-arrow-wrapper">
+          <div class="moving-arrow"></div>
+          <div class="moving-arrow"></div>
+          <div class="moving-arrow"></div>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <img class="img-50" src="./images/tech_02.jpg" alt="BB x TL Website" onclick="window.open('https://bbtl-wedding.com/')" />
       <div class="row-text">
@@ -109,6 +122,22 @@
     flex-direction: row;
     align-items: center;
   }
+  .col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+  }
+  .crystal-title {
+    margin-top: var(--global-side-padding);
+    margin-bottom: 25px;
+    padding: 0;
+  }
+  .img-100 {
+    width: 100%;
+    object-fit: contain;
+  }
   .img-50 {
     width: 50%;
     aspect-ratio: 2;
@@ -129,6 +158,50 @@
     padding-left: var(--global-side-padding);
     padding-right: var(--global-side-padding);
   }
+  .read-more-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: var(--global-side-padding);
+    cursor: pointer;
+  }
+  .read-more-wrapper > p {
+    margin: 0;
+    margin-right: 10px;
+    margin-left: 55px;
+  }
+  .moving-arrow-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .moving-arrow {
+    background-image: url('./icons/scrolldown.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    transform: rotate(-90deg);
+    position: relative;
+    transition: all ease-in-out 0.3s;
+  }
+  /* .read-more-wrapper:hover > .moving-arrow-wrapper > div:nth-child(2) {
+    transform: rotate(-90deg) translateY(-15px);
+  }
+  .read-more-wrapper:hover > .moving-arrow-wrapper > div:nth-child(3) {
+    transform: rotate(-90deg) translateY(-30px);
+  } */
+  .moving-arrow-wrapper > div:nth-child(2) {
+    transform: rotate(-90deg) translateY(-15px);
+  }
+  .moving-arrow-wrapper > div:nth-child(3) {
+    transform: rotate(-90deg) translateY(-30px);
+  }
+  .read-more-wrapper:hover > .moving-arrow-wrapper > div {
+    transform: rotate(-90deg);
+  }
+
   .row-text > h2 {
     cursor: pointer;
   }
