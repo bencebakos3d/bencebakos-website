@@ -1,18 +1,18 @@
 <section>
-  <div class="about-title">
+  <!-- <div class="about-title">
     <div class="divider"></div>
     <div class="title">
       <h1>Artist <br />&<br /> Developer</h1>
     </div>
-  </div>
+  </div> -->
 
   <div class="right-col">
+    <p>When I was 17, I started my carreer as a 3D Artist: creating cool visualizations of aircraft and trains. As I was working on web configurators, I quickly realized the importance and excitement of programming.</p>
+    <div class="divider"></div>
     <p>
-      When I was 17, I started my carreer as a 3D Artist: creating cool visualizations of aircraft and trains. <br /> As I was working on web configurators, I quickly realized the importance of programming.
-      <br />
-      <br />
+      Currently I do both full stack development and 3D visualization.
+      <br />Sounds a bit too much, right? Sometimes I feel the same. Learning new technologies is my passion, regardless of it is programming or 3D related.
     </p>
-    <p>Currently I use React and Astro frameworks on the frontend, NodeJS and MySQL on the backend. My strong visualization background helps me a lot, especially with frontend tasks.</p>
   </div>
 
   <!-- <h2>Best Of Both Worlds</h2> -->
@@ -21,7 +21,13 @@
 <style>
   section {
     padding-top: var(--global-side-padding);
-    background-color: var(--global-primary-background);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    box-sizing: border-box;
   }
   .about-title {
     width: 100%;
@@ -30,15 +36,22 @@
     align-items: center;
   }
   .divider {
-    width: 50%;
+    width: 150px;
+    background-color: var(--global-primary-content);
+    margin-top: var(--global-side-padding);
+    margin-bottom: var(--global-side-padding);
   }
   .left-col,
   .right-col,
   .title {
-    width: 50%;
+    max-width: 1100px;
+    width: 100%;
     box-sizing: border-box;
     padding-left: var(--global-side-padding);
     padding-right: var(--global-side-padding);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
   h1 {
     text-align: left;
@@ -47,7 +60,11 @@
     line-height: 4rem;
     margin: 0;
   }
-  @media only screen and (max-width: 768px) {
+  .right-col > p {
+    text-align: center;
+    line-height: 3rem;
+  }
+  .right @media only screen and (max-width: 768px) {
     section {
       padding-top: 0;
     }
