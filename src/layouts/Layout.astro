@@ -8,7 +8,7 @@ import { SEO } from 'astro-seo';
     <SEO title="Bence Bakos | Full Stack Developer and 3D Artist" description="Full Stack Developer with a strong 3D Design background, specializing in frontend web development with React and Astro." />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet" />
@@ -29,27 +29,31 @@ import { SEO } from 'astro-seo';
       html {
         font-family: 'Raleway';
       }
+      body {
+        margin: 0;
+        width: 100vw;
+        overflow-x: hidden;
+      }
       h1 {
         font-family: 'Raleway';
         margin: 5rem 0rem;
         font-weight: 500;
         font-size: 48px;
-        letter-spacing: 0.4em;
+        letter-spacing: 0.3em;
         text-align: center;
       }
       h2 {
         font-family: 'Raleway';
         font-weight: 300;
         font-size: 36px;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
         margin: 0;
       }
       p {
         font-family: 'Open Sans';
         font-weight: 300;
-        font-size: 20px;
-        letter-spacing: 0.1em;
-        line-height: 1.6rem;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
         margin: 0;
       }
       section {

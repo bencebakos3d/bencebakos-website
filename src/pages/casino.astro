@@ -1,24 +1,155 @@
 ---
+import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Online Casino">
-  <h1>Online Casino</h1>
+  <div class="page-wrapper">
+    <div class="header-wrapper">
+      <div class="navigate-back" onclick="javascript:history.back()"></div>
+      <h1>Online Casino</h1>
+      <p class="header-link" onclick="window.open('https://casino-s2oy.onrender.com/')">casino-s2oy.onrender.com/</p>
+    </div>
 
-  <p>I always loved casino games like poker, slots or roulette, so I had the idea to create one myself. I chose React because I liked the development experience in my previous projects, also we needed a framework suitable for the interactivity of the site.</p>
+    <div class="details-inline">
+      <div>
+        <h2 class="title">Technologies used:</h2>
+        <div class="technologies-wrapper">
+          <img src="./icons/react_icon.png" alt="React" title="React" />
+          <img src="./icons/nodejs_icon.png" alt="NodeJS" title="NodeJS" />
+          <img src="./icons/mysql_icon.png" alt="MySQL" title="MySQL" />
+          <img src="./icons/ts_icon.png" alt="Typescript" title="Typescript" />
+        </div>
+      </div>
 
-  <h2>Design</h2>
-  <p>Firstly I built a simple mockup for the website in Figma. The design and colors are mainly based on the famous Diamond casino in GTA Online, although I wanted to give it a few changes and a new name.</p>
+      <div class="github-link-wrapper">
+        <h2 class="title">GitHub:</h2>
+        <p class="github-link" onclick="window.open('https://github.com/bencebakos3d/crystal-casino')">github.com/bencebakos3d/crystal-casino</p>
+      </div>
+    </div>
 
-  <h2>Team</h2>
-  <p>My main role was to create a design and frontend functionality for the site. Sometimes I helped my friend Levente in the backend functionality, since this was his first experience with web development.</p>
+    <div class="details-text">
+      <h2 class="title">Design</h2>
+      <p>
+        I always loved casino games like poker, slots or roulette, so I had the idea to create a casino web application. <br /> I chose React because I liked the development experience in my previous projects, also I needed a framework suitable for the interactivity of the site. <br /> The first step was creating a simple mockup in Figma. The design and colors were inspired by the famous Diamond Casino
+        in GTA Online, although I wanted to give it a few changes and a new name.
+      </p>
+    </div>
 
-  <h2>The cookie system</h2>
-  <p>Instead of adding a full user registration and login system, we chose to use a simple session based authentication with cookies. It provides a faster and easier user experience without any hassle.</p>
+    <div class="details-text">
+      <h2 class="title">Team</h2>
+      <p>My main role was creating a design and frontend functionality for the site and helping my friend Levente in the backend development work, since this was his first experience with web development and Javascript / Typescript.</p>
+    </div>
 
-  <h2>Deploy</h2>
-  <p>The frontend is hosted on Vercel, but we wanted to keep it simple on the backend so we used Render, since Vercel only provides serverless functions and it would require many changes in the project. For the database, we used AWS RDS. Since we added CORS in the beginning of the project, I did not have any trouble while deploying.</p>
+    <img src="./images/casino_roulette.jpg" alt="Casino UI" class="casino-screenshot" />
 
-  <h2>Conclusion</h2>
-  <p>At first we thought this would be a pretty easy and fast project to finish, but this vision has disappeared quickly when we started implementing the cookie system. In my opinion, it was the hardest part of the development process. In overall, I loved every second of it, we keep polishing the current features and working on other games like slots and blackjack.</p>
+    <div class="details-text">
+      <h2 class="title">The cookie system</h2>
+      <p>Instead of adding a full user registration and login system, we chose to use a simple session based authentication with cookies. It provides a faster and easier user experience without any hassle. There was just one issue: the default MemoryStore has a memory-leak issue, so we needed a new solution. Express-mysql-session was the ideal choice for us, which has been implemented.</p>
+    </div>
+
+    <div class="details-text">
+      <h2 class="title">Deploy</h2>
+      <p>
+        When we started the project, we wanted to keep the frontend and backend separated, since it would provide a modular codebase with a cleaner development proccess. The frontend was hosted on Vercel, and we used Render for the backend. For the database, AWS RDS has been our choice. <br />Later on we found out this solution is not the best idea, since CORS decreases the website performance and
+        adds more unnecessary complexity. For example, Safari blocks all third-party cookies and Storage Access API would have been needed just to enable the cookie setting.
+      </p>
+    </div>
+
+    <div class="details-text">
+      <h2 class="title">Conclusion</h2>
+      <p>
+        At first I thought this would be a pretty easy and fast project to finish, but this vision has disappeared quickly when we started implementing the cookie system. In my opinion our biggest mistake was the lack of in-depth planning when we started the work, which has increased the development time. <br /><br />In overall, we learned a lot from this project and I loved every second of it, we
+        are polishing the features and experience even to this day.
+      </p>
+    </div>
+  </div>
+  <Footer />
 </Layout>
+
+<style>
+  .page-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--global-secondary-background);
+    padding-bottom: 5rem;
+  }
+  .navigate-back {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    background-image: url('./icons/scrolldown.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(90deg) translateX(-50%);
+    background-size: contain;
+    cursor: pointer;
+    filter: brightness(100);
+    transition: all ease-in-out 0.3s;
+  }
+  .navigate-back:hover {
+    transform: rotate(90deg) translateX(-50%) scale(1.3);
+    transition: all ease-in-out 0.3s;
+  }
+  .header-wrapper {
+    width: 100%;
+    background: linear-gradient(270deg, rgb(64, 15, 84) 0%, rgb(0, 0, 0) 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    box-sizing: border-box;
+    padding-top: 30px;
+    justify-content: center;
+    height: 200px;
+    color: white;
+  }
+  .header-wrapper > h1 {
+    margin: 0;
+  }
+  .header-link {
+    cursor: pointer;
+    font-size: 1.3rem;
+  }
+  .title {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .github-link {
+    color: var(--global-primary-content);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.3rem;
+  }
+  .details-inline {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  .details-text {
+    max-width: 1100px;
+    width: 100%;
+  }
+  .casino-screenshot {
+    width: 100%;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+  }
+  .technologies-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .technologies-wrapper > img {
+    width: 50px;
+    height: 50px;
+  }
+</style>

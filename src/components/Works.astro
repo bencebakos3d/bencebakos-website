@@ -1,11 +1,11 @@
 <div class="tech-wrapper">
-  <h1>TECH</h1>
+  <h1>PROGRAMMING</h1>
   <div class="works-wrapper">
-    <!-- <div class="col">
-      <img class="img-100" src="./images/tech_03.png" alt="The Crystal Online Casino Experience" />
+    <div class="col">
+      <img class="img-100" src="./images/tech_03.png" alt="The Crystal Online Casino Experience" onclick="window.open('https://casino-s2oy.onrender.com/')" />
       <h1 class="crystal-title">The Crystal</h1>
-      <h2>Online casino project</h2>
-      <div class="read-more-wrapper">
+      <p class="crystal-description">Online casino experience.<br />A full stack application made with React, Express and MySQL.</p>
+      <div class="read-more-wrapper" onclick="window.open('/casino', '_self')">
         <p>Read More</p>
         <div class="moving-arrow-wrapper">
           <div class="moving-arrow"></div>
@@ -13,9 +13,15 @@
           <div class="moving-arrow"></div>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="row">
-      <img class="img-50" src="./images/tech_02.jpg" alt="BB x TL Website" onclick="window.open('https://bbtl-wedding.com/')" />
+      <img class="img-50" src="./images/tech_01.jpg" alt="3DigitStudio website" onclick="window.open('https://3digitstudio.com/index.php')" />
+      <div class="row-text">
+        <h2 onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</h2>
+        <p>Frontend of the aviation and railway visualzation studio where I have been working for the past few years. Used HTML, CSS and vanilla JavaScript.</p>
+      </div>
+    </div>
+    <div class="row row-reverse">
       <div class="row-text">
         <h2 style="cursor:pointer" onclick="window.open('https://bbtl-wedding.com/')">BB x TL Wedding</h2>
         <p>
@@ -23,13 +29,7 @@
           <br />Hobby project.
         </p>
       </div>
-    </div>
-    <div class="row row-reverse">
-      <div class="row-text">
-        <h2 onclick="window.open('https://3digitstudio.com/index.php')">3DigitStudio</h2>
-        <p>Frontend of the aviation and railway visualzation studio where I have been working for the past few years. Used HTML, CSS and vanilla JavaScript.</p>
-      </div>
-      <img class="img-50" src="./images/tech_01.jpg" alt="3DigitStudio website" onclick="window.open('https://3digitstudio.com/index.php')" />
+      <img class="img-50" src="./images/tech_02.jpg" alt="BB x TL Website" onclick="window.open('https://bbtl-wedding.com/')" />
     </div>
   </div>
 </div>
@@ -108,6 +108,7 @@
 <style>
   h1 {
     padding-top: 10rem;
+    margin: 10rem 0;
     margin-top: 0;
   }
   .tech-wrapper {
@@ -134,9 +135,13 @@
     margin-bottom: 25px;
     padding: 0;
   }
+  .crystal-description {
+    text-align: center;
+  }
   .img-100 {
     width: 100%;
     object-fit: contain;
+    cursor: pointer;
   }
   .img-50 {
     width: 50%;

@@ -1,8 +1,6 @@
 <section>
   <div class="footer-top-wrapper">
-    <div class="left-col">
-      <div class="title">Design and coding by Bence Bakos</div>
-    </div>
+    <div class="title">Design and coding by Bence Bakos</div>
     <div class="right-col">
       <p class="contact-detail" onclick="window.open('mailto:bencemail1@gmail.com')">EMAIL</p>
       <p class="contact-detail" onclick="window.open('https://github.com/bencebakos3d')">GITHUB</p>
@@ -15,7 +13,7 @@
 <style>
   section {
     width: 100vw;
-    padding: 2rem var(--global-side-padding);
+    padding: 2.5rem var(--global-side-padding);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -33,22 +31,20 @@
     flex-direction: row;
     gap: 1rem;
   }
-  .left-col > h1 {
-    font-size: 1.4rem;
-    margin: 0;
-    text-align: left;
-    color: black;
-  }
   .title,
   .contact-detail {
     font-family: 'Open Sans';
-    font-size: 0.8rem;
-    font-weight: 300;
+    font-size: 0.9rem;
+    font-weight: 400;
     color: black;
     letter-spacing: 0.2em;
   }
   .contact-detail {
     cursor: pointer;
+  }
+  .title {
+    display: flex;
+    align-items: center;
   }
 
   @media only screen and (max-width: 768px) {
