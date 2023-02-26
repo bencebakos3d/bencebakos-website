@@ -8,9 +8,9 @@
       <div class="read-more-wrapper" onclick="window.open('/casino', '_self')">
         <p>Read More</p>
         <div class="moving-arrow-wrapper">
-          <div class="moving-arrow"></div>
-          <div class="moving-arrow"></div>
-          <div class="moving-arrow"></div>
+          <img class="moving-arrow" src="./icons/scrolldown.png" />
+          <img class="moving-arrow" src="./icons/scrolldown.png" />
+          <img class="moving-arrow" src="./icons/scrolldown.png" />
         </div>
       </div>
     </div>
@@ -181,10 +181,8 @@
     align-items: center;
   }
   .moving-arrow {
-    background-image: url('./icons/scrolldown.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: contain;
+    object-position: center;
     width: 15px;
     height: 15px;
     transform: rotate(-90deg);
@@ -197,13 +195,13 @@
   .read-more-wrapper:hover > .moving-arrow-wrapper > div:nth-child(3) {
     transform: rotate(-90deg) translateY(-30px);
   } */
-  .moving-arrow-wrapper > div:nth-child(2) {
+  .moving-arrow-wrapper > img:nth-child(2) {
     transform: rotate(-90deg) translateY(-15px);
   }
-  .moving-arrow-wrapper > div:nth-child(3) {
+  .moving-arrow-wrapper > img:nth-child(3) {
     transform: rotate(-90deg) translateY(-30px);
   }
-  .read-more-wrapper:hover > .moving-arrow-wrapper > div {
+  .read-more-wrapper:hover > .moving-arrow-wrapper > img {
     transform: rotate(-90deg);
   }
 

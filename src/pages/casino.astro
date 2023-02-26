@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Online Casino">
   <div class="page-wrapper">
     <div class="header-wrapper">
-      <div class="navigate-back" onclick="javascript:history.back()"></div>
+      <img class="navigate-back" onclick="javascript:history.back()" src="./icons/scrolldown.png" />
       <h1>Online Casino</h1>
       <p class="header-link" onclick="window.open('https://casino-s2oy.onrender.com/')">casino-s2oy.onrender.com/</p>
     </div>
@@ -81,11 +81,9 @@ import Layout from '../layouts/Layout.astro';
     position: absolute;
     top: 50%;
     left: 50px;
-    background-image: url('./icons/scrolldown.png');
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: contain;
+    object-position: center;
     transform: rotate(90deg) translateX(-50%);
-    background-size: contain;
     cursor: pointer;
     filter: brightness(100);
     transition: all ease-in-out 0.3s;
