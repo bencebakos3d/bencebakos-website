@@ -60,6 +60,20 @@ import { SEO } from 'astro-seo';
         width: 100vw;
       }
 
+      @media only screen and (max-width: 1366px) {
+        h1 {
+          font-size: 36px;
+        }
+        h2 {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 1rem;
+          line-height: 1.8rem;
+        }
+      }
+
       @media only screen and (max-width: 768px) {
         :root {
           --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
@@ -67,16 +81,6 @@ import { SEO } from 'astro-seo';
           --global-primary-background: #efefef;
           --global-secondary-background: #efefef;
           --global-primary-content: #765482;
-        }
-        p {
-          font-size: 1rem;
-        }
-        h1 {
-          font-size: 36px;
-        }
-        h2 {
-          font-size: 28px;
-          margin-bottom: 10px;
         }
       }
     </style>

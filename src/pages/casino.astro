@@ -125,7 +125,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .details-inline {
     max-width: 1100px;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -134,7 +134,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .details-text {
     max-width: 1100px;
-    width: 100%;
+    width: 90%;
   }
   .casino-screenshot {
     width: 100%;
@@ -149,5 +149,75 @@ import Layout from '../layouts/Layout.astro';
   .technologies-wrapper > img {
     width: 50px;
     height: 50px;
+  }
+
+  @media only screen and (max-width: 1366px) {
+    .header-link {
+      font-size: 1.1rem;
+    }
+    .github-link {
+      font-size: 1.1rem;
+    }
+
+    .technologies-wrapper > img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .navigate-back {
+      width: 25px;
+      height: 25px;
+    }
+    .details-inline {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+      max-width: unset;
+      width: 70%;
+    }
+    .details-text {
+      max-width: unset;
+      width: 70%;
+    }
+    .casino-screenshot {
+      margin-top: 5rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .details-inline {
+      flex-direction: column;
+      width: 100%;
+      max-width: unset;
+      box-sizing: border-box;
+      padding-left: var(--global-side-padding);
+      padding-right: var(--global-side-padding);
+      gap: 2.5rem;
+    }
+    .details-text {
+      width: 100%;
+      max-width: unset;
+      box-sizing: border-box;
+      padding-left: var(--global-side-padding);
+      padding-right: var(--global-side-padding);
+    }
+    .navigate-back {
+      transform: rotate(90deg);
+      top: 20px;
+      left: 20px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .header-wrapper {
+      gap: 20px;
+      padding-top: 20px;
+      height: 300px;
+    }
+    .header-wrapper > h1 {
+      font-size: 30px;
+    }
   }
 </style>
