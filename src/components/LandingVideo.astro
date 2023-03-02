@@ -1,7 +1,7 @@
 <section class="section-landing">
   <div class="landing-video-wrapper">
     <p class="engine-details">Rolls Royce Trent XWB <br /> Airbus A350</p>
-    <img src="./engine_video/engine_1.png" id="landing-video" alt="" />
+    <img src="./engine_video/engine_1.webp" id="landing-video" alt="" />
   </div>
   <!-- <div class="landing-text">
     <div class="landing-text-name">BENCE BAKOS</div>
@@ -106,10 +106,9 @@
   function trackScrollPosition() {
     const y = window.scrollY;
     const label = Math.min(Math.floor(y / step) + 1, 60);
-    const currentImage = `./engine_video/engine_${label}.png`;
+    const currentImage = `./engine_video/engine_${label}.webp`;
     // Change the background image
     landingVideo.setAttribute('src', currentImage);
-    console.log(currentImage);
   }
 
   document.addEventListener('scroll', () => {
