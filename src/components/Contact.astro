@@ -9,9 +9,9 @@
   </div>
   <h1>CONTACT</h1>
   <form action="" id="form">
-    <input class="textinput" type="text" placeholder="Email" id="reply_to" name="reply_to" />
-    <input class="textinput" type="text" placeholder="Name" id="from_name" name="from_name" />
-    <textarea class="textinput" name="message" cols="30" rows="10" placeholder="Message" id="message"></textarea>
+    <input class="textinput" type="text" placeholder="Email" id="reply_to" name="reply_to" required />
+    <input class="textinput" type="text" placeholder="Name" id="from_name" name="from_name" required />
+    <textarea class="textinput" name="message" cols="30" rows="10" placeholder="Message" id="message" required></textarea>
     <input type="submit" value="Submit" id="button" />
   </form>
 </section>
@@ -88,7 +88,6 @@
   .textinput {
     font-size: 20px;
     border: 1px solid #575757;
-    box-shadow: 0px 2px 4px #575757;
     width: 100%;
     box-sizing: border-box;
     padding-left: 10px;
